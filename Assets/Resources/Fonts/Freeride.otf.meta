@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: e611d4724ac1b4fe5b6b04683107b7d1
+timeCreated: 1486481086
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Freeride
+  fontNames:
+  - Freeride
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 53e5c3f5e3444405a84a28dcc4a1de1f
+timeCreated: 1491284744
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Zorus Serif
+  fontNames:
+  - Zorus Serif
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

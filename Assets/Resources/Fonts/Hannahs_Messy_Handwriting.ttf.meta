@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: d0bdf625655184e45985181a6b75afb2
+timeCreated: 1498036118
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Hannahs Messy Handwriting
+  fontNames:
+  - Hannahs Messy Handwriting
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
