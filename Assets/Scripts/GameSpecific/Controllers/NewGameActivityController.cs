@@ -14,6 +14,7 @@ public class NewGameActivityController : FGProgram {
 	public Button startGameButton;
 
 	public Text numberOfPlayersText;
+    public Text playersRemainingText;
 
 	List<string> seenPlayers;
 
@@ -39,7 +40,9 @@ public class NewGameActivityController : FGProgram {
 		qrEncoder.initialize ();
 		qrEncoder.onQREncodeFinished += qrEncodeReady;
 		startGameButton.interactable = false;
-		controllerHub.gameController.gameState.isMaster = true;
+        startGameButton.GetComponentInChildren<Image>().color = new Color(1, 1, 1, 0.25f);
+        startGameButton.GetComponentInChildren<FGText>().color = new Color(1, 1, 1, 0.25f);
+        controllerHub.gameController.gameState.isMaster = true;
 		controllerHub.gameController.gameState.masterLogin = controllerHub.gameController.gameState.localLogin;
 		//controllerHub.masterController.AppDebug ("Newing...");
 		//controllerHub.masterController.AppDebug ("Master is : " + controllerHub.gameController.gameState.localLogin);
@@ -48,6 +51,7 @@ public class NewGameActivityController : FGProgram {
 		updateNoticeScaler.scaleOutImmediately ();
 		updateNoticeText.text = (string)messagesTable.getElement (0, FGUtils.MsgIncompatVersion);
 		numberOfPlayersText.text = "1";
+        playersRemainingText.text = "Faltan 2 más";
 		seenPlayers = new List<string> ();
 
 	}
@@ -193,9 +197,19 @@ public class NewGameActivityController : FGProgram {
 		controllerHub.gameController.gameState.nPlayers = nPlayers;
 		controllerHub.networkController.broadcast ("setnplayers:" + nPlayers+":");
 		numberOfPlayersText.text = "" + nPlayers;
-		if (nPlayers >= 3) {
+        if(nPlayers == 2)
+        {
+            playersRemainingText.text = "Falta 1 más";
+        }
+        else
+        {
+            playersRemainingText.text = "";
+        }
+        if (nPlayers >= 3) {
 			startGameButton.interactable = true;
-		}
+            startGameButton.GetComponentInChildren<Image>().color = new Color(1, 1, 1, 1);
+            startGameButton.GetComponentInChildren<FGText>().color = new Color(1, 1, 1, 1);
+        }
 
 	}
 	

@@ -249,10 +249,6 @@ public class ScreenDController : FGProgram {
 //			answerAText.text = "";
 //			answerBText.text = "";
 //			answerCText.text = "";
-			if (scienceQuestion) {
-				scienceNonTurnTip.show ();
-			} else
-				mindNonTurnTip.show ();
 		}
 		individualLabelFader.Start ();
 		individualLabelFader.setOpacity (0.0f);
@@ -308,7 +304,14 @@ public class ScreenDController : FGProgram {
 		string B = (string)table.getElement (2, row);
 		string C = (string)table.getElement (3, row);
 
-		index = row;
+        if (scienceQuestion)
+        {
+            scienceNonTurnTip.show();
+        }
+        else
+            mindNonTurnTip.show();
+
+        index = row;
 		if (scienceQuestion) {
 			index = (int)table.getElement (5, row)-1;
 		}

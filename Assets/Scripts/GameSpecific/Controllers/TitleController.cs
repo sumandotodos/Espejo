@@ -561,8 +561,8 @@ public class TitleController : FGProgram, ButtonPressListener {
 
 	public void createNewGameConfirmButton() {
 
-		if (playcodeInput.text != CorrectPlayCode)
-			return;
+		//if (playcodeInput.text != CorrectPlayCode)
+		//	return;
 
 		controllerHub.gameController.quickSaveInfo.playcode = playcodeInput.text;
 		controllerHub.saveController.saveQuickSaveInfo ();

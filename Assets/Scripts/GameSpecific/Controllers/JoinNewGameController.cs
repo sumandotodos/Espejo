@@ -10,8 +10,9 @@ public class JoinNewGameController : FGProgram {
 	public QRCodeDecodeController qrDecoder;
 
 	public Text numberOfPlayersText;
+    public Text playersRemainingText;
 
-	public AudioClip gong_N;
+    public AudioClip gong_N;
 
 	int state;
 
@@ -80,6 +81,7 @@ public class JoinNewGameController : FGProgram {
 		updateNoticeScaler.scaleOutImmediately ();
 		updateNoticeText.text = (string)messagesTable.getElement (0, FGUtils.MsgIncompatVersion);
 		numberOfPlayersText.text = "1";
+        playersRemainingText.text = "Faltan 2 más";
 	}
 
 	public void communicateToMaster() {
@@ -144,13 +146,21 @@ public class JoinNewGameController : FGProgram {
 
 		controllerHub.gameController.gameState.nPlayers = pl;
 		numberOfPlayersText.text = "" + pl;
-//		if (firstSetNPlayers) {
-//			// acquire player number
-//			gameController.localPlayerN = pl - 1;
-//			firstSetNPlayers = false;
-//		}
+        if(pl == 2)
+        {
+            playersRemainingText.text = "Falta 1 más";
+        }
+        else
+        {
+            playersRemainingText.text = "";
+        }
+        //		if (firstSetNPlayers) {
+        //			// acquire player number
+        //			gameController.localPlayerN = pl - 1;
+        //			firstSetNPlayers = false;
+        //		}
 
-	}
+    }
 
 
 	void Update() {
